@@ -1,0 +1,29 @@
+{% extends 'fish_web_service/header-footer.html'%}
+
+{% block content %}
+<link rel='stylesheet' href='../../static/fish_web_service/css/search-mk.css' >
+        <div class = 'header'>
+                  <div class = 'header-down'>
+                      <div class = 'header-title'>SEARCH</div>
+                  </div>
+        </div>
+
+        <div class="search-container">
+            <form action="/search" method="get">
+              <div class="search-box">
+                <select name="water_type">
+                  <option value="">Выберите тип водоема...</option>
+                  <option value="river">Река</option>
+                  <option value="sea">Море</option>
+                  <option value="ocean">Океан</option>
+                </select>
+                <select name="location">
+                  <option value="">Выберите место...</option>
+                  <!-- Здесь можно добавить конкретные места -->
+                </select>
+                <input type="text" name="query" placeholder="Введите название рыбы...">
+                <button type="submit">Поиск</button>
+              </div>
+            </form>
+          </div>
+{% endblock %}

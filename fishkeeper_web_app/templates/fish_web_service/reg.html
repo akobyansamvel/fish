@@ -1,0 +1,36 @@
+{% extends 'fish_web_service/header-footer.html'%}
+
+{% block content %}
+<link rel='stylesheet' href='../../static/fish_web_service/css/reg.css' >
+        <div class="registration-form">
+            <form>
+              <div class="form-control">
+                <label for="first-name">Имя</label>
+                <input type="text" id="first-name" name="first-name" required>
+              </div>
+              <div class="form-control">
+                <label for="last-name">Фамилия</label>
+                <input type="text" id="last-name" name="last-name" required>
+              </div>
+              <div class="form-control">
+                <label for="age">Возраст</label>
+                <input type="number" id="age" name="age" required>
+              </div>
+              <div class="form-control">
+                <label for="email">Почта</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-control">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" required>
+              </div>
+              <div class="form-control">
+                <label for="confirm-password">Подтверждение пароля</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+              </div>
+              <div class="form-control">
+                <button type="submit">Зарегистрироваться</button>
+              </div>
+            </form>
+          </div>
+{% endblock %}

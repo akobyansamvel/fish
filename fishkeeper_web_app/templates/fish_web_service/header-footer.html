@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang ='en'>
+<head>
+    <meta charset = "UTF-8">
+    <link rel='stylesheet' href='static/fish_web_service/css/main.css' >
+    <title>AQUARIMS</title>
+</head>
+<body>
+    <div class = 'header'>
+        <div class = 'container'>
+            <div class  = 'header-line'>
+                <div class = 'nav'>
+                    <a class="nav-item" href ='{% url "home" %}'>Воды </a> 
+                    <a class="nav-item" href ='{% url "home" %}'>Карта </a>
+                    <a class="nav-item" href ='{% url "fish_id" 1 %}'>Информация</a>
+                    <a class="nav-item" href ='{% url "master-classes" %}'>Мастер классы </a>
+                </div>
+
+                <div class = 'registration'>
+                    <a class ='reg-item' href = '@'>Вход</a>
+                    <a class ='reg-item' href = '{% url "registration" %}'>Регистрация</a>    
+                </div>
+
+            </div>
+       
+        </div>
+
+{% block content %} {% endblock %}
+
+<div class="footer">
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#works">Works</a>
+    <a href="#blog">Blog</a>
+    <a href="#help">Help</a>
+    <a href="#contacts">Contacts</a>
+    <p>© All Rights Reserved. Fishkeeper Co.</p>
+    <a href="fishkeepers@stankin.ru">fishkeepers@stankin.ru</a>
+  </div>
+
+
+
+</body>
+</html>

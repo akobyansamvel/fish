@@ -1,0 +1,66 @@
+{% extends 'fish_web_service/header-footer.html'%}
+
+{% block content %}
+<link rel='stylesheet' href='../../static/fish_web_service/css/main.css' >
+        <div class = 'header'>
+            <div class = 'container'>
+                    <div class = 'header-down'>
+                        <div class = 'header-title'>AQUARIUMS</div>
+                    </div>
+            </div>  
+        </div>
+
+        
+
+ <div class = 'cards'>
+        <div class = 'nav-container'>
+            <div class = 'cards-holder'>
+                <div class = 'cards-name'>
+                    Изучай рыбок вместе с нами!
+                </div>
+    
+
+            <div class = 'card'>
+                
+                    <div class = 'card-title'>
+                    </div>
+                    
+                     <div class = 'card-desk'>
+
+                </div>
+                </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+    <div class="block">
+        <div class = 'block-text'>
+            Разные воды -
+                            <span>Разные рыбы</span>
+        </div>
+        <img src="../../static/fish_web_service/images/main/map.png" alt="Карта мира"> <!-- Замените на URL вашего изображения -->
+      </div>
+      
+      <!-- Блок 3 -->
+      <div class="container-block">
+        <div class="buttons">
+          <a href="{% url 'master-classes' %}" class="button">Оригами</a>
+          <a href="{% url 'master-classes' %}" class="button">Раскраски</a>
+          <a href="{% url 'master-classes' %}" class="button">Дизайн аквариумов</a>
+          <a href="{% url 'master-classes' %}" class="button">Программирование</a>
+        </div>
+        <img src="../../static/fish_web_service/images/main/children.jpg" alt="Описание изображения" class="image">
+      </div>
+      
+      <div class="form-container">
+        <form action="/submit_registration" method="post">
+          <input type="email" name="email" placeholder="E-mail">
+          <input type="text" name="name" placeholder="Имя">
+          <input type="password" name="password" placeholder="Пароль">
+          <button type="submit">ЗАВЕРШИТЬ РЕГИСТРАЦИЮ</button>
+        </form>
+      </div>
+{% endblock %}
