@@ -18,7 +18,7 @@ def fish_templates(request: HttpRequest, fish_id):
         data["fish_name"] = "Не карп"
     else:
         data["fish_name"] = "Другой не карп"
-    return render(request, 'fish_web_service/fish-template.html', context=data)
+    return render(request, 'fish_web_service/fish-1.html', context=data)
 
 
 def master_classes(request: HttpRequest):
@@ -29,8 +29,15 @@ def master_classes_templates(request: HttpRequest, mk_id):
     return render(request, 'fish_web_service/example.html')
 
 
-def search_mk(request: HttpRequest):
-    return render(request, 'fish_web_service/search-mk.html')
+def search_fish(request: HttpRequest):
+    context = {"fishes": None}
+    template = 'fish_web_service/search-fish.html'
+    if request.method == "POST":
+        req_dict = request.POST.dict()
+        data
+        context["documents"] = function.get_documents(req_dict)
+
+    return render(request, template, context)
 
 
 def registration(request: HttpRequest):
@@ -38,4 +45,4 @@ def registration(request: HttpRequest):
 
 
 def page_not_found(request, exception):
-    return render('fish_web_service/page-not-found.html')
+    return HttpResponseNotFound('fish_web_service/page-not-found.html')

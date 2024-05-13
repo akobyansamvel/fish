@@ -6,7 +6,7 @@ urlpatterns = [
     path('fish/<int:fish_id>/', views.fish_templates, name='fish_id'),
     path('master-classes/', views.master_classes, name='master-classes'),
     path('master-classes/<int:mk_id>/', views.master_classes_templates, name='master-classes-id'),
-    path('search-master-classes/', views.search_mk, name='master-classes-search'),
+    path('search-fish/', views.search_fish, name='search-fish'),
     path('registration/', views.registration, name='registration'),
 ]
 

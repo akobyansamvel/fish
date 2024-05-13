@@ -1,7 +1,8 @@
 {% extends 'fish_web_service/header-footer.html'%}
 
 {% block content %}
-<link rel='stylesheet' href='../../static/fish_web_service/css/main.css' >
+{% load static %}
+<link rel='stylesheet' href='{% static "fish_web_service/css/main.css" %}' >
         <div class = 'header'>
             <div class = 'container'>
                     <div class = 'header-down'>
@@ -41,7 +42,7 @@
             Разные воды -
                             <span>Разные рыбы</span>
         </div>
-        <img src="../../static/fish_web_service/images/main/map.png" alt="Карта мира"> <!-- Замените на URL вашего изображения -->
+        <img src="{% static 'fish_web_service/images/main/map.png' %}" alt="Карта мира"> <!-- Замените на URL вашего изображения -->
       </div>
       
       <!-- Блок 3 -->
@@ -52,7 +53,7 @@
           <a href="{% url 'master-classes' %}" class="button">Дизайн аквариумов</a>
           <a href="{% url 'master-classes' %}" class="button">Программирование</a>
         </div>
-        <img src="../../static/fish_web_service/images/main/children.jpg" alt="Описание изображения" class="image">
+        <img src="{% static 'fish_web_service/images/main/children.jpg' %}" alt="Описание изображения" class="image">
       </div>
       
       <div class="form-container">

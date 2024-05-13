@@ -1,7 +1,8 @@
 {% extends 'fish_web_service/header-footer.html'%}
 
 {% block content %}
-<link rel='stylesheet' href='../../static/fish_web_service/css/reg.css' >
+{% load static %}
+<link rel='stylesheet' href='{% static "fish_web_service/css/reg.css" %}' >
         <div class="registration-form">
             <form>
               <div class="form-control">

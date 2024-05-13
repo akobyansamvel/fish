@@ -1,0 +1,50 @@
+{% extends 'fish_web_service/header-footer.html'%}
+
+{% block content %}
+{% load static %}
+<link rel='stylesheet' href='{% static "fish_web_service/css/search-fish.css" %}' >
+        <div class = 'title-div'>
+                  <div class = 'title-down'>
+                      <div class = 'title'>SEARCH</div>
+                  </div>
+        </div>
+
+        <div class="search-container">
+            <form action="search-fish" method="get">
+              <div class="search-box">
+                <select name="water_type">
+                  <option value="">Выберите тип водоема...</option>
+                  <option value="river">Река</option>
+                  <option value="sea">Море</option>
+                  <option value="ocean">Океан</option>
+                </select>
+                <select name="location">
+                  <option value="">Выберите место...</option>
+                  <!-- Здесь можно добавить конкретные места -->
+                </select>
+                <input type="text" name="fish_name" placeholder="Введите название рыбы...">
+                <button type="submit">Поиск</button>
+              </div>
+            </form>
+          </div>
+
+        <section class="found_fishes">
+            {% if request.method == "POST" %}
+                    {% for fish, fish_parameters in fishes.items %}
+
+                        {% if data.file_stored %}
+                        <a href="viewer?id={{document}}{{data.file_type}}"><button style="cursor: pointer" name={{document}} >
+                                    {{ data.document_name }}
+                                </button>
+                            </a>
+                        {% else %}
+                        <button style="cursor: pointer" name={{document}} >
+                            {{ data.document_name }}
+                        </button>
+                        {% endif %}
+            <br>
+            <br>
+                    {% endfor %}
+            {% endif %}
+        </section>
+{% endblock %}
