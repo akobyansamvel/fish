@@ -82,16 +82,13 @@ body{
 }
 
 .gallery { display: flex; flex-direction: column; align-items: center; }
-  .top-image { width: 80%; margin: 10px 0; }
-  .middle-images { display: flex; justify-content: space-around; width: 100%; }
-  .middle-images img { width: calc(50% - 20px); margin: 10px; }
+  .top-image { width: 100%; margin: 10px 0; }
   .text-content { 
     width: 80%; 
     margin: 20px 0; 
     text-align: center;
     display: flex;
 }
-  .bottom-image { width: 80%; margin: 10px 0; }
 
 .footer {
     text-align: center;
