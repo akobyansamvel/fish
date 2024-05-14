@@ -1,0 +1,177 @@
+body{
+    margin: 0;
+}
+
+.container{
+    margin: 0px 0px;
+    
+}
+.nav-container{
+    margin: 0px 166px;
+}
+
+.header{
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://usagif.com/wp-content/uploads/gifs/fish-15.gif);  
+}
+
+.block-1{
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://usagif.com/wp-content/uploads/gifs/fish-15.gif);
+
+}
+
+.header-line{
+    height: 70px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(74, 164, 187, 0.944);
+
+}
+
+.nav-item{
+    color:white;
+    text-decoration:none;
+    align-items: center;
+    font-weight: 300;
+    font-size: 18px;
+    top: 20px;
+    margin-right: 25px;
+
+    transition: color 0.3s linear;
+}
+
+.nav-item:hover{
+    color:cadetblue;
+
+}
+.reg-item{
+    color:white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    margin-right: 25px;
+}
+
+.reg-item:hover{
+    color:cadetblue;
+}
+
+
+.header-down{
+    position: relative;
+
+}
+
+.header-title{
+    color: white;
+    font-size: 120px;
+    font-weight: 400;
+
+    text-align: center;
+    position: absolute;
+    left: 600px;
+    margin-top: 200px;
+}
+
+
+.header-suptitle{
+    color:white;
+    font-size: 18px;
+    
+
+}
+
+
+.icons {
+    background-color: rgba(74, 164, 187, 0.944);
+    display: flex; 
+    justify-content: space-evenly; 
+    padding: 60px 0; 
+} 
+.icon { 
+    text-align: center; 
+    size: 30px;
+}
+
+.icon img{
+    width: 100px;
+    height: auto;
+}
+
+.block-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+  }
+  .text-block {
+    flex: 1;
+    margin-right: 20px;
+  }
+  .image-block {
+    flex: 1;
+    text-align: center;
+  }
+img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  block-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+  }
+.text-block-2 {
+    flex: 1;
+    margin-left: 20px;
+  }
+.image-block-2{
+    flex: 1;
+    text-align: center;
+  }
+
+.block-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+  }
+ .text-block-3 {
+    flex: 1;
+    margin-right: 20px;
+  }
+.image-block-3 {
+    flex: 1;
+    text-align: center;
+  }
+
+.praise {
+    font-size: 24px; /* Размер шрифта для надписи */
+    color: black; /* Цвет надписи */
+    margin-top: 20px; /* Отступ сверху */
+    text-align: center;
+    font-weight: bold;
+
+  }
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 12px;
+    background-color: rgba(74, 164, 187, 0.944);
+  }
+.footer a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
