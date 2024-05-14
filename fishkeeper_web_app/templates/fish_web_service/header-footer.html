@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang ='en'>
 <head>
     <meta charset = "UTF-8">
-    <link rel='stylesheet' href='static/fish_web_service/css/main.css' >
+    <link rel='stylesheet' href='{% static "fish_web_service/css/header-footer.css" %}' >
     <title>AQUARIMS</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
                 <div class = 'nav'>
                     <a class="nav-item" href ='{% url "home" %}'>Воды </a> 
                     <a class="nav-item" href ='{% url "home" %}'>Карта </a>
-                    <a class="nav-item" href ='{% url "fish_id" 1 %}'>Информация</a>
+                    <a class="nav-item" href ='{% url "search-fish"%}'>Информация</a>
                     <a class="nav-item" href ='{% url "master-classes" %}'>Мастер классы </a>
                 </div>
 

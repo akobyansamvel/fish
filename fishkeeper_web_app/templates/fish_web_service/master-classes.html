@@ -1,12 +1,12 @@
 {% extends 'fish_web_service/header-footer.html'%}
 
 {% block content %}
-<link rel='stylesheet' href='../../static/fish_web_service/css/master-classes.css' >
+{% load static %}
+<link rel='stylesheet' href='{% static "fish_web_service/css/master-classes.css" %}' >
         <div class = 'header'>
             <div class = 'container'>
                     <div class = 'header-down'>
                         <div class = 'header-title'>
-                            <a class="nav-item" href='{% url "master-classes-search" %}' >Поиск</a>
                             Мастер классы
                         </div>
                     </div>
@@ -17,13 +17,13 @@
             <div class ='icons1'>
             <div class="icon">
                 <a href="@" > 
-                <img src="../../static/fish_web_service/images/master_classes/paper.png"> 
+                <img src="{% static 'fish_web_service/images/master_classes/paper.png' %}">
             </a>
                 <p>Документы</p> 
             </div> 
             <div class="icon"> 
                 <a href ='@'>
-                <img src="../../static/fish_web_service/images/master_classes/comp.png"> 
+                <img src="{% static 'fish_web_service/images/master_classes/comp.png' %}">
             </a>
                 <p>Программирование</p> 
             </div> 
@@ -31,13 +31,13 @@
         <div class = 'icons2'>
             <div class="icon"> 
                 <a href = '@'>
-                <img src="../../static/fish_web_service/images/master_classes/mk.png"> 
+                <img src="{% static 'fish_web_service/images/master_classes/mk.png' %}">
             </a>
                 <p>Живопись</p> 
             </div> 
             <div class="icon"> 
                 <a href = '@'>
-                <img src="../../static/fish_web_service/images/master_classes/lotus.png">
+                <img src="{% static 'fish_web_service/images/master_classes/lotus.png' %}">
             </a> 
                 <p>Оригами</p> 
             </div> 

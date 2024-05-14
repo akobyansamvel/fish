@@ -1,22 +1,20 @@
 {% extends 'fish_web_service/header-footer.html'%}
 
 {% block content %}
-<link rel='stylesheet' href='../../static/fish_web_service/css/fish-template.css' >
+{% load static %}
+<link rel='stylesheet' href='{% static "fish_web_service/css/fish-template-1.css" %}' >
 
         <div class = 'header'>
           <div class = 'container'>
                   <div class = 'header-down'>
-                      <div class = 'header-title'>{{ fish_name }}</div>
+                      <div class = 'header-title'>{{ name }}</div>
                   </div>
           </div>  
         </div>
 
         <div class="gallery">
-            <img src="../../static/fish_web_service/images/fish-template/karp/karp1.png" alt="Верхнее изображение карпа" class="top-image">
-            <div class="middle-images">
-              <img src="../../static/fish_web_service/images/fish-template/karp/karp2.jpg" alt="Левое среднее изображение карпа">
-              <img src="../../static/fish_web_service/images/fish-template/karp/karp3.jpg" alt="Правое среднее изображение карпа">
-            </div>
+            {% with str_id=id|stringformat:'i' %}
+            <img src="{% static 'fish_web_service/images/fish-template/'|add:str_id|add:'/1.jpg' %}" alt="Верхнее изображение карпа" class="top-image">
             <div class="text-content">
               <!-- Здесь будет ваш текст -->
               <p>Карп — это пресноводная рыба из семейства карповых. Она имеет длинное тело, покрытое крупными чешуйками, и удлиненную лопатевидную плавничку на спине. Карпы могут достигать впечатляющих размеров, некоторые виды превышают 1 метр в длину и весят более 40 кг. 
@@ -24,7 +22,6 @@
                 В природе карпы встречаются в пресных водоемах, таких как озера, реки, пруды и каналы. Они обитают в медленно текущих или стоячих водах с грунтовым дном, где могут искать пищу и укрытие. Карпы являются всеядными рыбами, питаются водорослями, растениями, мелкими беспозвоночными, а также рыбьими и растительными отбросами.</p>
               <!-- Добавьте остальной текст согласно вашему дизайну -->
             </div>
-            <img src="../../static/fish_web_service/images/fish-template/karp/karp4.jpg" alt="Нижнее изображение карпа" class="bottom-image">
             <div class = "text-content">
                 <p>Карпы часто используются в промышленном и рекреационном рыболовстве. Они ценятся как объекты спортивного увлечения и как ценный источник пищи. Карпы также популярны в аквакультуре, где их разводят для коммерческих целей. 
 
@@ -32,5 +29,6 @@
                     
                     Карпы также известны своей способностью к адаптации к различным условиям среды обитания и выживанию в различных климатических зонах, что делает их важными с точки зрения биологического разнообразия в водных экосистемах.</p>
             </div>
+            {% endwith %}
           </div>
 {% endblock %}

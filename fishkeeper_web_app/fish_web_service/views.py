@@ -1,6 +1,8 @@
 from django.http import HttpRequest, HttpResponseNotFound
 from django.shortcuts import render
 
+from fish_web_service.models import Fishes
+
 
 def NONE_indexed(request: HttpRequest):
     return render(request, 'fish_web_service/example.html')
@@ -11,14 +13,10 @@ def main_page(request: HttpRequest):
 
 
 def fish_templates(request: HttpRequest, fish_id):
-    data = {"fish_id": fish_id, "fish_name": ""}
-    if fish_id == 1:
-        data["fish_name"] = "Карп"
-    elif fish_id == 2:
-        data["fish_name"] = "Не карп"
-    else:
-        data["fish_name"] = "Другой не карп"
-    return render(request, 'fish_web_service/fish-template.html', context=data)
+    fish_data = list(Fishes.objects.filter(id=fish_id).values())[0]
+    template = f'fish_web_service/fish-templates/fish-{fish_data["photos_count"]}.html'
+
+    return render(request, template, context=fish_data)
 
 
 def master_classes(request: HttpRequest):
@@ -29,8 +27,15 @@ def master_classes_templates(request: HttpRequest, mk_id):
     return render(request, 'fish_web_service/example.html')
 
 
-def search_mk(request: HttpRequest):
-    return render(request, 'fish_web_service/search-mk.html')
+def search_fish(request: HttpRequest):
+    context = {"fishes": None}
+    template = 'fish_web_service/search-fish.html'
+    if request.method == "POST":
+        req_dict = request.POST.dict()
+        fishes_data = list(Fishes.objects.filter(name__icontains=req_dict.get('fish_name')).values())
+        context["fishes"] = fishes_data
+
+    return render(request, template, context)
 
 
 def registration(request: HttpRequest):
@@ -38,4 +43,4 @@ def registration(request: HttpRequest):
 
 
 def page_not_found(request, exception):
-    return render('fish_web_service/page-not-found.html')
+    return HttpResponseNotFound('fish_web_service/page-not-found.html')

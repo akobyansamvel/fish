@@ -1,0 +1,43 @@
+{% extends 'fish_web_service/header-footer.html'%}
+
+{% block content %}
+{% load static %}
+<link rel='stylesheet' href='{% static "fish_web_service/css/search-fish.css" %}' >
+        <div class = 'title-div'>
+                  <div class = 'title-down'>
+                      <div class = 'title'>SEARCH</div>
+                  </div>
+        </div>
+
+        <div class="search-container">
+            <form method="POST">{% csrf_token %}
+              <div class="search-box">
+                <select name="water_type">
+                  <option value="">Выберите тип водоема...</option>
+                  <option value="river">Река</option>
+                  <option value="sea">Море</option>
+                  <option value="ocean">Океан</option>
+                </select>
+                <select name="location">
+                  <option value="">Выберите место...</option>
+                  <!-- Здесь можно добавить конкретные места -->
+                </select>
+                <input type="text" name="fish_name" placeholder="Введите название рыбы...">
+                <button type="submit">Поиск</button>
+              </div>
+            </form>
+          </div>
+
+
+            {% if request.method == "POST" %}
+                <section class="found_fishes">
+                    {% for current_fish in fishes %}
+                        <a class="fish_link" href="{% url 'fish_id' current_fish.id %}">
+                            <button class="fishes-btn" style="cursor:pointer" name={{current_fish.id}}>
+                                {{ current_fish.name }}
+                            </button>
+                        </a> <br><br>
+                    {% endfor %}
+                </section>
+            {% endif %}
+{% endblock %}
