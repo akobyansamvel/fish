@@ -23,6 +23,10 @@ def master_classes(request: HttpRequest):
     return render(request, 'fish_web_service/master-classes.html')
 
 
+def origami(request: HttpRequest): # Сделано для примера, нужно сделать такую же систему как с рыбами
+    return render(request, 'fish_web_service/origami.html')
+
+
 def master_classes_templates(request: HttpRequest, mk_id):
     return render(request, 'fish_web_service/example.html')
 

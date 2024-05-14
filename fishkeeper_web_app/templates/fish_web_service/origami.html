@@ -1,30 +1,25 @@
 {% extends 'fish_web_service/header-footer.html'%}
 
 {% block content %}
-<link rel='stylesheet' href='../../static/fish_web_service/css/paint.css' >
-        <div class = 'header'>
-            <div class = 'container'>
-                    <div class = 'header-down'>
-                        <div class = 'header-title'>ОРИГАМИ</div>
-                    </div>
-            </div>  
+{% load static %}
+<link rel='stylesheet' href='{% static "fish_web_service/css/origami.css" %}' >
+        <div class = 'title-div'>
+                  <div class = 'title-down'>
+                      <div class = 'title'>Оригами</div>
+                  </div>
         </div>
-
-        
 
         <div class="icons">
           <div class ='icons1'>
           <div class="icon">
-              <a href="@" > 
-              <img src="../../static/fish_web_service/images/paint/brain.png"> 
+              <img src="{% static 'fish_web_service/images/origami/brain.png' %}">
           </a>
               <p> Средняя сложность</p> 
           </div> 
       </div>
       <div class = 'icons2'>
-          <div class="icon"> 
-              <a href = '@'>
-              <img src="../../static/fish_web_service/images/paint/pesok.png"> 
+          <div class="icon">
+              <img src="{% static 'fish_web_service/images/origami/sand-watches.png' %}">
           </a>
               <p>10 минут</p> 
           </div> 
@@ -42,14 +37,14 @@
           </div>
           <div class="image-block">
             <!-- Здесь будет ваша фотография -->
-            <img src="../../static/fish_web_service/images/paint/paint1.jpg" alt="Описание изображения">
+            <img src="{% static 'fish_web_service/images/origami/origami1.jpg' %}" alt="Описание изображения">
           </div>
         </div>
 
         <div class="block-2">
           <div class="image-block-2">
             <!-- Здесь будет ваша фотография -->
-            <img src="../../static/fish_web_service/images/paint/paint2.jpg" alt="Описание изображения">
+            <img src="{% static 'fish_web_service/images/origami/origami2.jpg' %}" alt="Описание изображения">
           </div>
           <div class="text-block-2">
               <p>5. Переверните заготовку и загните нижний уголок.</p>
@@ -68,7 +63,7 @@
           </div>
           <div class="image-block-3">
             <!-- Здесь будет ваша фотография -->
-            <img src="../../static/fish_web_service/images/paint/paint3.jpg" alt="Описание изображения">
+            <img src="{% static 'fish_web_service/images/origami/origami3.jpg' %}" alt="Описание изображения">
           </div>
         </div>
 {% endblock %}
