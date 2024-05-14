@@ -10,7 +10,7 @@
         </div>
 
         <div class="search-container">
-            <form action="search-fish" method="get">
+            <form method="POST">{% csrf_token %}
               <div class="search-box">
                 <select name="water_type">
                   <option value="">Выберите тип водоема...</option>
@@ -28,23 +28,16 @@
             </form>
           </div>
 
-        <section class="found_fishes">
-            {% if request.method == "POST" %}
-                    {% for fish, fish_parameters in fishes.items %}
 
-                        {% if data.file_stored %}
-                        <a href="viewer?id={{document}}{{data.file_type}}"><button style="cursor: pointer" name={{document}} >
-                                    {{ data.document_name }}
-                                </button>
-                            </a>
-                        {% else %}
-                        <button style="cursor: pointer" name={{document}} >
-                            {{ data.document_name }}
-                        </button>
-                        {% endif %}
-            <br>
-            <br>
+            {% if request.method == "POST" %}
+                <section class="found_fishes">
+                    {% for current_fish in fishes %}
+                        <a class="fish_link" href="{% url 'fish_id' current_fish.id %}">
+                            <button class="fishes-btn" style="cursor:pointer" name={{current_fish.id}}>
+                                {{ current_fish.name }}
+                            </button>
+                        </a> <br><br>
                     {% endfor %}
+                </section>
             {% endif %}
-        </section>
 {% endblock %}

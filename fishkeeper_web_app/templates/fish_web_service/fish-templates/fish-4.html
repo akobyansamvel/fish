@@ -2,7 +2,7 @@
 
 {% block content %}
 {% load static %}
-<link rel='stylesheet' href='{% static "fish_web_service/css/fish-template-1.css" %}' >
+<link rel='stylesheet' href='{% static "fish_web_service/css/fish-template-4.css" %}' >
 
         <div class = 'header'>
           <div class = 'container'>
@@ -15,6 +15,10 @@
         <div class="gallery">
             {% with str_id=id|stringformat:'i' %}
             <img src="{% static 'fish_web_service/images/fish-template/'|add:str_id|add:'/1.jpg' %}" alt="Верхнее изображение карпа" class="top-image">
+            <div class="middle-images">
+              <img src="{% static 'fish_web_service/images/fish-template/'|add:str_id|add:'/2.jpg' %}" alt="Левое среднее изображение карпа">
+              <img src="{% static 'fish_web_service/images/fish-template/'|add:str_id|add:'/3.jpg' %}" alt="Правое среднее изображение карпа">
+            </div>
             <div class="text-content">
               <!-- Здесь будет ваш текст -->
               <p>Карп — это пресноводная рыба из семейства карповых. Она имеет длинное тело, покрытое крупными чешуйками, и удлиненную лопатевидную плавничку на спине. Карпы могут достигать впечатляющих размеров, некоторые виды превышают 1 метр в длину и весят более 40 кг. 
@@ -22,6 +26,7 @@
                 В природе карпы встречаются в пресных водоемах, таких как озера, реки, пруды и каналы. Они обитают в медленно текущих или стоячих водах с грунтовым дном, где могут искать пищу и укрытие. Карпы являются всеядными рыбами, питаются водорослями, растениями, мелкими беспозвоночными, а также рыбьими и растительными отбросами.</p>
               <!-- Добавьте остальной текст согласно вашему дизайну -->
             </div>
+            <img src="{% static 'fish_web_service/images/fish-template/'|add:str_id|add:'/4.jpg' %}" alt="Нижнее изображение карпа" class="bottom-image">
             <div class = "text-content">
                 <p>Карпы часто используются в промышленном и рекреационном рыболовстве. Они ценятся как объекты спортивного увлечения и как ценный источник пищи. Карпы также популярны в аквакультуре, где их разводят для коммерческих целей. 
 
