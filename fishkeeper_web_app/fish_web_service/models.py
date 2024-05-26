@@ -1,16 +1,16 @@
 from django.db import models
-
+import json
 
 class Fish(models.Model):
-    name = models.CharField(max_length=100)
-    type = models.CharField(max_length=100)
+    name = models.CharField(max_length=255)
+    type = models.CharField(max_length=255)
     description = models.TextField()
     habitat = models.TextField()
     requirements = models.TextField()
     food = models.TextField()
-    compatibility =models.JSONField(default=list)
+    compatibility = models.JSONField()
     photos_count = models.IntegerField()
-    image_paths = models.JSONField(default=list)  # Use JSONField to store image paths
+    image_paths = models.JSONField()
 
-    def __str__(self):
-        return self.name
+    class Meta:
+        db_table = 'fishes'
