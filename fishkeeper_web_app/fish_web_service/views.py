@@ -44,24 +44,29 @@ def add_fish(request):
             if len(images) != fish.photos_count:
                 return render(request, 'fish_web_service/fish-templates/add_fish.html', {
                     'fish_form': fish_form,
-                    'error': 'Number of images does not match photos count'
+                    'error': 'Number of images does not match photos_count'
                 })
+            fish.save()  # Save the fish object first to get an ID
+
             image_paths = []
-            for image in images:
-                fish_folder = os.path.join('static/fish_images', fish.name.lower())
-                if not os.path.exists(fish_folder):
-                    os.makedirs(fish_folder)
-                image_filename = os.path.join(fish_folder, image.name)
+            fish_folder = os.path.join('static/fish_web_service/images/fish-template', str(fish.id))
+            if not os.path.exists(fish_folder):
+                os.makedirs(fish_folder)
+
+            for index, image in enumerate(images):
+                image_filename = os.path.join(fish_folder, f'{index + 1}.jpg')
                 with open(image_filename, 'wb+') as destination:
                     for chunk in image.chunks():
                         destination.write(chunk)
-                image_paths.append(image_filename)
+                image_paths.append(f'{index + 1}.jpg')
+
             fish.image_paths = json.dumps(image_paths)
-            fish.save()
+            fish.save()  # Save the fish object with updated image paths
             return redirect('fish_web_service:fish_detail', pk=fish.pk)
     else:
         fish_form = FishForm()
     return render(request, 'fish_web_service/fish-templates/add_fish.html', {'fish_form': fish_form})
+
 def fish_detail(request, pk):
     fish = get_object_or_404(Fish, pk=pk)
     fish.image_paths = json.loads(fish.image_paths)
