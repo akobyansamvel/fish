@@ -8,7 +8,7 @@ class Fish(models.Model):
     habitat = models.TextField()
     requirements = models.TextField()
     food = models.TextField()
-    compatibility = models.JSONField()
+    compatibility = models.JSONField(blank=True, null=True, default=list)
     photos_count = models.IntegerField()
     image_paths = models.JSONField()
 

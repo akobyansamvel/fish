@@ -35,6 +35,7 @@ def search_fish(request: HttpRequest):
     return render(request, template, context)
 
 
+
 def add_fish(request):
     if request.method == 'POST':
         fish_form = FishForm(request.POST, request.FILES)
@@ -71,7 +72,6 @@ def fish_detail(request, pk):
     fish = get_object_or_404(Fish, pk=pk)
     fish.image_paths = json.loads(fish.image_paths)
     return render(request, 'fish_web_service/fish-templates/fish_detail.html', {'fish': fish})
-
 def registration(request: HttpRequest):
     return render(request, 'fish_web_service/reg.html')
 
