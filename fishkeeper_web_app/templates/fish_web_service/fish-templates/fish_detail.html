@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ fish.name }}</title>
+</head>
+<body>
+    <h1>{{ fish.name }}</h1>
+    <p>{{ fish.type }}</p>
+    <p>{{ fish.description }}</p>
+    <p>{{ fish.habitat }}</p>
+    <p>{{ fish.requirements }}</p>
+    <p>{{ fish.food }}</p>
+    <p>{{ fish.compatibility }}</p>
+    <p>Photos Count: {{ fish.photos_count }}</p>
+    {% if fish.image_paths %}
+        <div class="images">
+            {% for image_path in fish.image_paths %}
+                <img src="/{{ image_path }}" alt="Image of {{ fish.name }}" style="width:300px;">
+            {% endfor %}
+        </div>
+    {% endif %}
+    <button onclick="window.location.href='/'">Back to main page</button>
+</body>
+</html>

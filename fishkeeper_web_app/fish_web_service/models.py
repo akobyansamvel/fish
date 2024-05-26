@@ -1,16 +1,16 @@
 from django.db import models
 
 
-class Fishes(models.Model):
-    # id = models.AutoField()  # Primary key
+class Fish(models.Model):
     name = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
     description = models.TextField()
-    habitat = models.TextField(blank=True, max_length=200)
-    requirements = models.TextField(blank=True)
-    food = models.TextField(blank=True)
-    compatibility = models.JSONField(blank=True, default={})
+    habitat = models.TextField()
+    requirements = models.TextField()
+    food = models.TextField()
+    compatibility =models.JSONField(default=list)
     photos_count = models.IntegerField()
+    image_paths = models.JSONField(default=list)  # Use JSONField to store image paths
 
     def __str__(self):
         return self.name
