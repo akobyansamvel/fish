@@ -74,7 +74,9 @@ def add_fish(request):
 def fish_detail(request, pk):
     fish = get_object_or_404(Fish, pk=pk)
     fish.image_paths = json.loads(fish.image_paths)
-    return render(request, 'fish_web_service/fish-templates/fish_detail.html', {'fish': fish})
+    image_urls = [f'/static/fish_web_service/images/fish-template/{fish.id}/{img}' for img in fish.image_paths]
+    return render(request, 'fish_web_service/fish-templates/fish_detail.html', {'fish': fish, 'image_urls': image_urls})
+
 def registration(request: HttpRequest):
     return render(request, 'fish_web_service/reg.html')
 

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,18 +6,19 @@
 </head>
 <body>
     <h1>{{ fish.name }}</h1>
-    <p>Type: {{ fish.type }}</p>
-    <p>Description: {{ fish.description }}</p>
-    <p>Habitat: {{ fish.habitat }}</p>
-    <p>Requirements: {{ fish.requirements }}</p>
-    <p>Food: {{ fish.food }}</p>
-    <p>Compatibility: {{ fish.compatibility }}</p>
-    <p>Photos Count: {{ fish.photos_count }}</p>
-    <div>
-        {% for image in fish.image_paths %}
-            <img src="{% static 'fish_web_service/images/fish-template/' %}{{ fish.id }}/{{ image }}" alt="Image {{ forloop.counter }}">
-        {% endfor %}
-    </div>
-    <button onclick="window.location.href='{% url 'fish_web_service:main_page' %}'">Back to main page</button>
+    <p><strong>Type:</strong> {{ fish.type }}</p>
+    <p><strong>Description:</strong> {{ fish.description }}</p>
+    <p><strong>Habitat:</strong> {{ fish.habitat }}</p>
+    <p><strong>Requirements:</strong> {{ fish.requirements }}</p>
+    <p><strong>Food:</strong> {{ fish.food }}</p>
+    <p><strong>Compatibility:</strong> {{ fish.compatibility }}</p>
+    <p><strong>Photos Count:</strong> {{ fish.photos_count }}</p>
+
+    {% for img_url in image_urls %}
+        <img src="{{ img_url }}" alt="{{ fish.name }}">
+    {% endfor %}
+
+    <br>
+    <button onclick="window.location.href='/'">Back to main page</button>
 </body>
 </html>
