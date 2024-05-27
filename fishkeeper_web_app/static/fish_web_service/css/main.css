@@ -4,7 +4,7 @@ body{
 
 .container{
     margin: 0px 0px;
-    
+
 }
 .nav-container{
     margin: 0px 166px;
@@ -69,7 +69,7 @@ body{
     display: flex;
     justify-content: center;
 
-}       
+}
 
 .card-title{
     display:flex;
@@ -112,7 +112,7 @@ body{
     height: auto;
 
   }
- 
+
   .footer {
     background-color: #f2f2f2;
     padding: 10px;
@@ -124,7 +124,7 @@ body{
     max-width: 1200px; /* пример максимальной ширины */
     display:flex;
     align-items: center;
-    
+
 
     margin: auto; /* центрирование блока */
     overflow: hidden; /* предотвращение переполнения */
@@ -160,10 +160,10 @@ body{
     box-shadow: 20px  9px 3px rgba(5, 4, 4, 0.479);
     border: 1px solid black ;
   }
-  
 
 
- 
+
+
   .form-container {
     background-color: white;
     width: 300px;

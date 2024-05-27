@@ -32,6 +32,9 @@ def search_fish(request: HttpRequest):
         req_dict = request.POST.dict()
         fishes_data = list(Fish.objects.filter(name__icontains=req_dict.get('fish_name')).values())
         context["fishes"] = fishes_data
+    else:
+        # If GET request, retrieve all fish records
+        context["fishes"] = list(Fish.objects.all().values())
     return render(request, template, context)
 
 
