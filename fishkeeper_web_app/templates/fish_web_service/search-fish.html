@@ -29,14 +29,14 @@
           </div>
 
 
-            {% if request.method == "POST" %}
+            {% if request.method == "POST" or request.method == "GET"%}
                 <section class="found_fishes">
                     {% for current_fish in fishes %}
                         <a class="fish_link" href="{% url 'fish_id' current_fish.id %}">
-                            <button class="fishes-btn" style="cursor:pointer" name={{current_fish.id}}>
-                                {{ current_fish.name }}
-                            </button>
-                        </a> <br><br>
+                            <div class="fish_card">
+                                <p class="fish_name">{{ current_fish.name }}</p>
+                            </div>
+                        </a>
                     {% endfor %}
                 </section>
             {% endif %}

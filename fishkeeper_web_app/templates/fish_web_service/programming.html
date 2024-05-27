@@ -1,0 +1,49 @@
+{% extends 'fish_web_service/header-footer.html'%}
+
+{% block content %}
+{% load static %}
+<link rel='stylesheet' href='{% static "fish_web_service/css/programming.css" %}' >
+    <div class = 'header'>
+            <div class = 'header-down'>
+                <div class = 'header-title'> Программирование</div>
+            </div>
+    </div>
+
+
+        <div class="container-accordion">
+            <button class="accordion">Общая теория</button>
+            <div class="panel">
+              <p>Здесь ваш текст для раздела "Общая теория".</p>
+            </div>
+          
+            <button class="accordion">Библиотека turtle</button>
+            <div class="panel">
+              <p>Здесь ваш текст для раздела "Библиотека turtle".</p>
+            </div>
+          
+            <button class="accordion">Задание</button>
+            <div class="panel">
+              <p>Здесь ваш текст для раздела "Задание".</p>
+            </div>
+          
+            <a href="https://www.jetbrains.com/pycharm/download/" class="download-link">Давай прогать!</a>
+          </div>
+        
+        <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+        </script>
+
+{% endblock %}

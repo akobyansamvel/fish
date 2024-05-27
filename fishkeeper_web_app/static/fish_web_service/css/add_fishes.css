@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+}
+
+.container{
+    margin: 0px 0px;
+
+}
+.nav-container{
+    margin: 0px 166px;
+}
+
+.title-div{
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title-down{
+    position: relative;
+}
+
+.title{
+    position:absolute;
+    width:100%;
+    top:20%;
+    text-align:center;
+    color: black;
+    font-size: 120px;
+    font-weight: 400;
+
+    margin-top: 200px;
+}
+
+
+.header-suptitle{
+    color:white;
+    font-size: 18px;
+}
+
+.container-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form {
+    width: 50%;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  input, button, label {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #4cae4c;
+  }
+  .file-input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  .file-input-container label {
+    flex-basis: 30%;
+    margin-right: 10px;
+  }
+  .file-input-container input[type="file"] {
+    flex-basis: 70%;
+  }
+
+
+  .disabled-input{
+    background-color: #e9ecef;
+    color : #6c757d;
+  }

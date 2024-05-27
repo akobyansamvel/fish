@@ -1,0 +1,32 @@
+{% extends 'fish_web_service/header-footer.html'%}
+
+{% block content %}
+{% load static %}
+<link rel='stylesheet' href='{% static "fish_web_service/css/search-mk.css" %}' >
+        <div class = 'header'>
+            <div class = 'header-down'>
+                <div class = 'header-title'>Мастер классы</div>
+            </div>
+        </div>
+
+
+        <div class="container-list">
+            <div class = "title-list" >Презентации для скачивания</div>
+        <div class="presentation-list">
+            <!-- Кнопки презентаций -->
+            <a href="{% static 'fish_web_service/mk_files/presentations/iskusstvo-gastronomii.pptx' %}" class="presentation-button">Презентация 1</a>
+            <a href="{% static 'fish_web_service/mk_files/presentations/master-klass-po-viazaniiu-skulptur.pptx' %}" class="presentation-button">Презентация 2</a>
+            <a href="{% static 'fish_web_service/mk_files/presentations/sekrety-prigotovleniia-pitatelnyx-ugoshhenii.pptx' %}" class="presentation-button">Презентация 3</a>
+            <a href="{% static 'fish_web_service/mk_files/presentations/sekrety-sozdaniia-zdorovogo-meniu-dlia-akvariumnyx-obitatelei.pptx' %}" class="presentation-button">Презентация 4</a>
+            <a href="{% static 'fish_web_service/mk_files/presentations/ukraseniia-svoimi-rukami.pptx' %}" class="presentation-button">Презентация 5</a>
+            <a href="{% static 'fish_web_service/mk_files/presentations/unikalnye-viazanye-ukraseniia-master-klass.pptx' %}" class="presentation-button">Презентация 6</a>
+            <a href="{% static 'fish_web_service/mk_files/presentations/Вязаные украшения для аквариума.pptx' %}" class="presentation-button">Презентация 7</a>
+            <a href="{% static 'fish_web_service/mk_files/presentations/Как выбрать оборудование.pptx' %}" class="presentation-button">Презентация 8</a>
+            <a href="{% static 'fish_web_service/mk_files/presentations/Как выбрать растение.pptx' %}" class="presentation-button">Презентация 9</a>
+            <a href="{% static 'fish_web_service/mk_files/presentations/Как играть с золотой рыбкой.pptx' %}" class="presentation-button">Презентация 10</a>
+            <a href="{% static 'fish_web_service/mk_files/presentations/Как обслуживать фильтр аквариума.pptx' %}" class="presentation-button">Презентация 11</a>
+            <a href="{% static 'fish_web_service/mk_files/presentations/Как правильно ухаживать за рыбками.pptx' %}" class="presentation-button">Презентация 12</a>
+            <a href="{% static 'fish_web_service/mk_files/presentations/Как создать экосистему в аквариуме.pptx' %}" class="presentation-button">Презентация 13</a>
+          </div>
+        </div>
+{% endblock %}

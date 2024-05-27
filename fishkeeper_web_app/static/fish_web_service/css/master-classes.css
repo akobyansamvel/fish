@@ -28,6 +28,39 @@ body{
     z-index: 1;
   }
 
+.found_fishes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fish_card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+    width: 150px;
+}
+
+.fish_card:hover {
+    transform: scale(1.05);
+}
+
+.fish_name {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.fish_link{
+    text-decoration: none;
+}
+
 .header-down{
     position: relative;
 

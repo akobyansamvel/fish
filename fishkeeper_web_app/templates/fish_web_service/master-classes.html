@@ -13,6 +13,14 @@
             </div>
           </div>
 
+        <section class="found_fishes">
+            <a class="fish_link" href="{% url 'search_mk' %}">
+                <div class="fish_card">
+                    <p class="fish_name">Список <br>мастер-классов</p>
+                </div>
+            </a>
+        </section>
+
         <div class="icons">
 
             <div class ='icons1'>
@@ -25,7 +33,7 @@
             </div>
 
             <div class="icon"> 
-                <a href ='@'>
+                <a href ='{% url "programming" %}'>
                 <img src="{% static 'fish_web_service/images/master_classes/comp.png' %}">
             </a>
                 <p>Программирование</p> 

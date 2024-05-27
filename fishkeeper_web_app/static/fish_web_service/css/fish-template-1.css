@@ -17,8 +17,6 @@ body{
     background-color: white;
   }
 
-
-
 .header-line{
     height: 70px;
     display: flex;
@@ -82,12 +80,16 @@ body{
 }
 
 .gallery { display: flex; flex-direction: column; align-items: center; }
-  .top-image { width: 100%; margin: 10px 0; }
+  .top-image { 
+                width: 60%; 
+                margin: 10px 0;
+             }
   .text-content {
     width: 80%;
     margin: 20px 0;
-    text-align: center;
+    text-align: left;
     display: flex;
+    font-size: 32px;
 }
 
 .footer {

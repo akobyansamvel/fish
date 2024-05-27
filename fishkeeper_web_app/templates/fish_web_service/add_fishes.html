@@ -1,0 +1,33 @@
+{% extends 'fish_web_service/header-footer.html'%}
+
+{% block content %}
+{% load static %}
+<link rel='stylesheet' href='{% static "fish_web_service/css/add_fishes.css" %}' >
+            <div class = 'title-div'>
+                  <div class = 'title-down'>
+                      <div class = 'title'>Добавление информации</div>
+                  </div>
+            </div>
+
+        <div class='container-form'>
+        <div class="form">
+            <h1>Добавить новую рыбу</h1>
+            <!-- Форма добавления рыбы -->
+            <form method="POST">{% csrf_token %}
+                <input type="text" name="name" placeholder="name" required>
+                <input type="text" name="type" placeholder="type" required>
+                <input type="text" name="description" placeholder="description" required>
+                <input type="text" name="habitat" placeholder="habitat" required>
+                <input type="text" name="requirements" placeholder="requirements" required>
+                <input type="text" name="food" placeholder="food" required>
+                <input type ='json' class ='compatibility' placeholder="compatibility" disabled>
+                <input type="number" name="photos_count" placeholder="photos_count" required>
+                <div class="file-input-container">
+                  <label for="images">Добавить фотографию:</label>
+                  <input type="file" id="images" name="images">
+                </div>
+                <button type="submit">Добавить рыбу</button>
+              </form>
+          </div>
+        </div>
+{% endblock %}
