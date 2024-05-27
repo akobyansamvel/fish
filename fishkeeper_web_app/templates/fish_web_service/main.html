@@ -1,41 +1,8 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang='en'>
-<head>
-    <meta charset="UTF-8">
-    <link rel='stylesheet' href='{% static "fish_web_service/css/header-footer.css" %}'>
-    <title>AQUARIUMS</title>
-</head>
-<body>
-    <div class='header'>
-        <div class='container'>
-            <div class='header-line'>
-                <div class='nav'>
-                    <a class="nav-item" href='{% url "home" %}'>Воды</a>
-                    <a class="nav-item" href='{% url "home" %}'>Карта</a>
-                    <a class="nav-item" href='{% url "fish_web_service:search_fish" %}'>Информация</a>
-                    <a class="nav-item" href='{% url "fish_web_service:master_classes" %}'>Мастер классы</a>
-                    <a class="nav-item" href='{% url "fish_web_service:add_fish" %}'>Добавить Рыбу</a>
-                </div>
-                <div class='registration'>
-                    <a class='reg-item' href='#'>Вход</a>
-                    <a class='reg-item' href='{% url "fish_web_service:registration" %}'>Регистрация</a>
-                </div>
-            </div>
-        </div>
-    </div>
+{% extends 'fish_web_service/header-footer.html' %}
 
-    {% block content %}{% endblock %}
-
-    <div class="footer">
-        <a href="#about">About</a>
-        <a href="#features">Features</a>
-        <a href="#works">Works</a>
-        <a href="#blog">Blog</a>
-        <a href="#help">Help</a>
-        <a href="#contacts">Contacts</a>
-        <p>© All Rights Reserved. Fishkeeper Co.</p>
-        <a href="mailto:fishkeepers@stankin.ru">fishkeepers@stankin.ru</a>
-    </div>
-</body>
-</html>
+{% block content %}
+<div>
+    <h1>Welcome to Aquarium World</h1>
+    <p>This is the main content of the page.</p>
+</div>
+{% endblock %}

@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Fish List</title>
-</head>
-<body>
-    <h1>Fish List</h1>
-    <ul>
-        {% for fish in fishes %}
-            <li><a href="{% url 'fish_app:fish_detail' fish.pk %}">{{ fish.name }}</a></li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'fish_app:add_fish' %}">Add a New Fish</a>
-</body>
-</html>
+{% extends 'fish_web_service/header-footer.html' %}
+
+{% block content %}
+<h1>Fish List</h1>
+<ul>
+    {% for fish in fishes %}
+        <li><a href="{% url 'fish_web_service:fish_detail' fish.pk %}">{{ fish.name }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'fish_web_service:add_fish' %}">Add a New Fish</a>
+{% endblock %}

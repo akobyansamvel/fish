@@ -1,44 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add a New Fish</title>
-    <script>
-        function updateImageInputs() {
-            var count = document.getElementById('id_photos_count').value;
-            var imageInputs = document.getElementById('imageInputs');
-            imageInputs.innerHTML = '';
-            for (var i = 0; i < count; i++) {
-                var label = document.createElement('label');
-                label.setAttribute('for', 'image' + (i+1));
-                label.innerHTML = 'Image ' + (i+1) + ': ';
-                var input = document.createElement('input');
-                input.setAttribute('type', 'file');
-                input.setAttribute('id', 'image' + (i+1));
-                input.setAttribute('name', 'images');
-                input.setAttribute('required', true);
-                imageInputs.appendChild(label);
-                imageInputs.appendChild(input);
-                imageInputs.appendChild(document.createElement('br'));
-            }
+{% extends 'fish_web_service/header-footer.html' %}
+
+{% block content %}
+<h1>Add a New Fish</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ fish_form.as_p }}
+    <div id="imageInputs"></div>
+    <button type="submit">Add Fish</button>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</form>
+<br>
+<button onclick="window.location.href='/'">Back to main page</button>
+<script>
+    document.getElementById('id_photos_count').addEventListener('change', function() {
+        var count = document.getElementById('id_photos_count').value;
+        var imageInputs = document.getElementById('imageInputs');
+        imageInputs.innerHTML = '';
+        for (var i = 0; i < count; i++) {
+            var label = document.createElement('label');
+            label.setAttribute('for', 'image' + (i + 1));
+            label.innerHTML = 'Image ' + (i + 1) + ': ';
+            var input = document.createElement('input');
+            input.setAttribute('type', 'file');
+            input.setAttribute('id', 'image' + (i + 1));
+            input.setAttribute('name', 'images');
+            input.setAttribute('required', true);
+            imageInputs.appendChild(label);
+            imageInputs.appendChild(input);
+            imageInputs.appendChild(document.createElement('br'));
         }
-    </script>
-</head>
-<body>
-    <h1>Add a New Fish</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ fish_form.as_p }}
-        <div id="imageInputs"></div>
-        <button type="submit">Add Fish</button>
-        {% if error %}
-            <p style="color: red;">{{ error }}</p>
-        {% endif %}
-    </form>
-    <br>
-    <button onclick="window.location.href='/'">Back to main page</button>
-    <script>
-        document.getElementById('id_photos_count').addEventListener('change', updateImageInputs);
-    </script>
-</body>
-</html>
+    });
+</script>
+{% endblock %}
